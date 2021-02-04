@@ -52,11 +52,11 @@ const styles = StyleSheet.create({
     },
     text1: {
         fontFamily: 'Nunito-SemiBold',
-        color: "#7D8797"
+        color: colors.text.secondary
     },
     text2: {
         fontFamily: 'Nunito-Bold',
-        color: "#7D8797",
+        color: colors.text.secondary,
     }
 
 

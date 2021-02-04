@@ -1,15 +1,16 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { ICBackDark } from '../../../assets'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors } from '../../../utils'
-import { Gap } from '../../atoms'
+import { Button, Gap } from '../../atoms'
 
-const Header1 = () => {
+const Header1 = ({onPress, title}) => {
     return (
 
         <View style={styles.container}>
-            <ICBackDark />
-            <Text style={styles.text}>Header Comp</Text>
+            <TouchableOpacity>
+                <Button type='icon-only' icon='back-dark' onPress={onPress}/>
+            </TouchableOpacity>
+            <Text style={styles.text}>{title}</Text>
             <Gap width={24} />
         </View>
     )
