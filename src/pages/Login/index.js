@@ -1,10 +1,10 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { ICLogo } from '../../assets'
 import { Button, Gap, Input } from '../../components'
+import { colors } from '../../utils'
 
-const Login = () => {
+const Login = ({ navigation }) => {
     return (
         <View style={{ flex: 1, padding: 40 }}>
             <View style={styles.logo}>
@@ -21,8 +21,8 @@ const Login = () => {
             <Button title='Sign In' />
 
             <View style={styles.container}>
-                <Text style={styles.text1}>Dont have an account?</Text>
-                <TouchableOpacity>
+                <Text style={styles.text1}>Dont have an account? </Text>
+                <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                     <Text style={styles.text2}>Sign Up</Text>
                 </TouchableOpacity>
             </View>
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
 
     },
     fPassword: {
-        color: '#7D8797',
+        color: colors.text.secondary,
         textDecorationLine: 'underline',
         marginTop: 5,
         fontFamily: 'Nunito-Regular'

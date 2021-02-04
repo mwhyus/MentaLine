@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { colors } from '../../../utils'
 
 const Button = ({ type, title, onPress }) => {
     return (
@@ -16,7 +17,7 @@ export default Button
 
 const styles = StyleSheet.create({
     container: (type) => ({
-        backgroundColor: type === 'secondary' ? 'white' : '#009AA3',
+        backgroundColor: type === 'secondary' ? 'white' : colors.button.primary.background,
         paddingVertical: 10,
         borderRadius: 10,
         width: 300

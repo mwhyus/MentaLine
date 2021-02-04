@@ -1,5 +1,5 @@
 import React from 'react'
-import { View, Text, Image, ImageBackground, StyleSheet, onPress } from 'react-native'
+import { Image, ImageBackground, StyleSheet, View } from 'react-native'
 import { ILGetStarted, ILText } from '../../assets'
 import { Button, Gap } from '../../components'
 
