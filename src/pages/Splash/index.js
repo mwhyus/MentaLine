@@ -10,7 +10,7 @@ export default function Splash({navigation}) {
   },[])
   
   return (
-    <View style={{ backgroundColor: '#FFFFFF' }}>
+    <View style={styles.background}>
       <View style={styles.mainLogo}>
         <ICLogo />
       </View>
@@ -34,6 +34,10 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '90%',
     marginTop: '35%'
+  },
+
+  background: {
+    color: '#FFFFFF'
   }
 
 })
