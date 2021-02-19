@@ -1,6 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { Button, Gap, Input } from '../../components'
+import { fonts } from '../../utils'
 
 
 const Register = ({ navigation }) => {
@@ -39,7 +40,7 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: 'center',
-        fontFamily: 'Nunito-SemiBold',
+        fontFamily: fonts.primary[600],
         fontSize: 22,
         marginBottom: 40
     }

@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { ICLogo } from '../../assets'
 import { Button, Gap, Input } from '../../components'
-import { colors } from '../../utils'
+import { colors, fonts } from '../../utils'
 
 const Login = ({ navigation }) => {
     return (
@@ -51,11 +51,11 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     text1: {
-        fontFamily: 'Nunito-SemiBold',
+        fontFamily: fonts.primary[600],
         color: colors.text.secondary
     },
     text2: {
-        fontFamily: 'Nunito-Bold',
+        fontFamily: fonts.primary[600],
         color: colors.text.secondary,
     }
 

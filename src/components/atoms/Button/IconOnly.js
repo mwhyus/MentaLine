@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
+import { StyleSheet, TouchableOpacity } from 'react-native'
 import { ICBackDark } from '../../../assets'
 
 const IconOnly = ({ onPress, icon }) => {
