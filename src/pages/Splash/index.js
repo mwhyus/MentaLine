@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
 
   background: {
-    color: '#FFFFFF'
+    backgroundColor: '#FFFFFF'
   }
 
 })

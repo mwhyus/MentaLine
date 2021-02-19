@@ -18,7 +18,7 @@ const Login = ({ navigation }) => {
             </TouchableOpacity>
 
             <Gap height={34} />
-            <Button title='Sign In' />
+            <Button title='Sign In' onPress={() => navigation.replace('MainApp')} />
 
             <View style={styles.container}>
                 <Text style={styles.text1}>Dont have an account? </Text>
