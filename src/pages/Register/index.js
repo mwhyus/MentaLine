@@ -14,7 +14,7 @@ const Register = ({ navigation }) => {
             <Input label='Password' />
             <Gap height={20} />
             <View style={{ marginLeft: 7 }}>
-                <Button title='Sign Up' />
+                <Button title='Sign Up' onPress={() => navigation.navigate('UploadPhoto')} />
             </View>
             <View style={styles.container}>
                 <Text style={styles.text1}>Dont have an account? </Text>
