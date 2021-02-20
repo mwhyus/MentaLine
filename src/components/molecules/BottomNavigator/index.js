@@ -58,6 +58,8 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         paddingHorizontal: 53,
         paddingVertical: 12,
-        backgroundColor: colors.primary
+        backgroundColor: colors.primary,
+        borderTopLeftRadius: 16,
+        borderTopRightRadius: 16
     }
 })

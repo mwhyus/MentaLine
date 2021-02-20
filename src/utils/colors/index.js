@@ -1,10 +1,12 @@
     const mainColors={
         green1: '#0BCAD4',
         green2: '#009AA3',
+        green3: '#D9F9FB',
         dark1: '#112340',
         dark2: '#2C3E50',
         grey1: '#7D8797',
         grey2: '#C1C1C1',
+        white: '#ffffff'
         
     }
   
@@ -30,4 +32,7 @@
                 text: mainColors.dark1
             }
         },
+        cardLight: mainColors.green3,
+        backgroundColor: mainColors.white,
+        border: mainColors.grey2
     }
