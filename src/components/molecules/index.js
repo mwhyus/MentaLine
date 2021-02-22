@@ -3,5 +3,6 @@ import BottomNavigator from './BottomNavigator'
 import HomeProfile from './HomeProfile'
 import DoctorCategory from './DoctorCategory'
 import NewsItem from './NewsItem'
+import ListDoctor from './ListDoctor'
 
-export {Header1, BottomNavigator, HomeProfile, DoctorCategory, NewsItem}
+export {Header1, BottomNavigator, HomeProfile, DoctorCategory, NewsItem, ListDoctor}
