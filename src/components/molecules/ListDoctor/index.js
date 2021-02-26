@@ -1,16 +1,15 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
-import { DummyDoc1 } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const ListDoctor = () => {
+const ListDoctor = ({profile, name, chat}) => {
     return (
         <View style={styles.pages}>
-            <Image source={DummyDoc1} style={styles.avatar} />
+            <Image source={profile} style={styles.avatar} />
             <TouchableOpacity>
-                <Text style={styles.name}>Reiner Braun</Text>
-                <Text style={styles.chat}>Hi Doc, I have a problem with...</Text>
+                <Text style={styles.name}>{name}</Text>
+                <Text style={styles.chat}>{chat}</Text>
             </TouchableOpacity>
         </View>
     )
