@@ -6,5 +6,16 @@ import UploadPhoto from './UploadPhoto'
 import Home from './Home'
 import Messages from './Messages'
 import Settings from './Settings'
+import Maps from './Maps'
 
-export {Splash, GetStarted, Register, Login, UploadPhoto, Home, Messages, Settings};
+export {
+    Splash,
+    GetStarted,
+    Register,
+    Login,
+    UploadPhoto,
+    Home,
+    Messages,
+    Settings,
+    Maps
+};

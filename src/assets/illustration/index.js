@@ -8,6 +8,7 @@ import ILDocPsy from './doc-psy.svg'
 import ILDocVet from './doc-vet.svg'
 import ILDocDen from './doc-den.svg'
 import ILMedicine from './medicine.svg'
+import ILCover from './cover.png'
 
 export {
     ILFirst,
@@ -19,5 +20,6 @@ export {
     ILDocPsy,
     ILDocVet,
     ILDocDen,
-    ILMedicine
+    ILMedicine,
+    ILCover
 }

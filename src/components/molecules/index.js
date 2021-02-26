@@ -4,5 +4,15 @@ import HomeProfile from './HomeProfile'
 import DoctorCategory from './DoctorCategory'
 import NewsItem from './NewsItem'
 import ListDoctor from './ListDoctor'
+import ListHospital from './ListHospitals'
 
-export {Header1, BottomNavigator, HomeProfile, DoctorCategory, NewsItem, ListDoctor}
+
+export {
+    Header1,
+    BottomNavigator,
+    HomeProfile,
+    DoctorCategory,
+    NewsItem,
+    ListDoctor,
+    ListHospital
+}

@@ -5,14 +5,14 @@ import { DoctorCategory, HomeProfile, NewsItem } from '../../components'
 import { colors, fonts } from '../../utils'
 
 
-const Home = () => {
+const Home = ({navigation}) => {
     return (
         <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
             <View style={styles.content}>
                 <View style={styles.smallcontainer}>
                     <View style={styles.header}>
                         <HomeProfile />
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.navigate('Maps')}>
                             <ICMap />
                         </TouchableOpacity>
                     </View>

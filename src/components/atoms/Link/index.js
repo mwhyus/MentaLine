@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native'
 const Link = () => {
     return (
         <View>
-            <Text></Text>
+            <Text>Link Component</Text>
         </View>
     )
 }
