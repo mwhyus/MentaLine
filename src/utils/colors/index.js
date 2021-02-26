@@ -6,7 +6,8 @@
         dark2: '#2C3E50',
         grey1: '#7D8797',
         grey2: '#C1C1C1',
-        white: '#ffffff'
+        white: '#ffffff',
+        red:   '#D65445'
         
     }
   
@@ -30,9 +31,13 @@
             secondary: {
                 background: 'white',
                 text: mainColors.dark1
+            },
+            third: {
+                background: mainColors.red
             }
         },
         cardLight: mainColors.green3,
         backgroundColor: mainColors.white,
-        border: mainColors.grey2
+        border: mainColors.grey2,
+        wrapper: mainColors.green2
     }
