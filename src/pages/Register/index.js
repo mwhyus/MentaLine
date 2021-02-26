@@ -1,5 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Input } from '../../components'
 import { fonts } from '../../utils'
 
@@ -8,11 +9,13 @@ const Register = ({ navigation }) => {
     return (
         <View style={styles.MainContainer}>
             <Text style={styles.text}>Register Yourself</Text>
-            <Input label='Full Name' />
-            <Input label='Profession' />
-            <Input label='Email' />
-            <Input label='Password' />
-            <Gap height={20} />
+            <ScrollView showsVerticalScrollIndicator={false}>
+                <Input label='Full Name' />
+                <Input label='Profession' />
+                <Input label='Email' />
+                <Input label='Password' />
+                <Gap height={40} />
+            </ScrollView>
             <View style={{ marginLeft: 7 }}>
                 <Button title='Sign Up' onPress={() => navigation.navigate('UploadPhoto')} />
             </View>

@@ -7,7 +7,8 @@
         grey1: '#7D8797',
         grey2: '#C1C1C1',
         white: '#ffffff',
-        red:   '#D65445'
+        red:   '#D65445',
+        blue:  '#0066CB'
         
     }
   
@@ -17,6 +18,7 @@
         secondary: mainColors.dark1,
         white: 'white',
         black: 'black',
+        tertiary: mainColors.blue,
         text: {
             primary: mainColors.dark1,
             secondary: mainColors.grey1,

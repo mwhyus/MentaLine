@@ -19,7 +19,7 @@ const MainApp = () => {
 
 const Router = () => {
     return (
-        <Stack.Navigator initialRouteName='MainApp'>
+        <Stack.Navigator>
             <Stack.Screen name='splash' component={Splash} options={{ headerShown: false }}/>
             <Stack.Screen name='GetStarted' component={GetStarted} options={{ headerShown: false }} />
             <Stack.Screen name='Register' component={Register} options={{ headerShown: false }} />
