@@ -10,6 +10,8 @@ import ICMessagesActive from './MessagesActive.svg'
 import ICSettingsActive from './SettingsActive'
 import ICMap from './map'
 import ICChatNow from './email.svg'
+import ICSendLight from './send-light.svg'
+import ICSendDark from './send-dark.svg'
 
 
 export {
@@ -24,5 +26,7 @@ export {
     ICMessagesActive,
     ICSettingsActive,
     ICMap,
-    ICChatNow
+    ICChatNow,
+    ICSendDark,
+    ICSendLight
 }

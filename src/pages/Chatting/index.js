@@ -3,14 +3,16 @@ import { StyleSheet, Text, View } from 'react-native'
 import { ChatItem, Header1, InputChat } from '../../components'
 import { colors, fonts } from '../../utils'
 
-const Chatting = ({navigation}) => {
+const Chatting = ({ navigation }) => {
     return (
-        <View>
+        <View style={styles.page}>
             <Header1 type='light-profile' title="Zoe Hange" onPress={() => navigation.goBack()} />
-            <Text style={styles.chatDate}>23 August, 2020</Text>
-            <ChatItem />
-            <ChatItem />
-            <ChatItem />
+            <View style={styles.content}>
+                <Text style={styles.chatDate}>23 August, 2020</Text>
+                <ChatItem />
+                <ChatItem />
+                <ChatItem />
+            </View>
             <InputChat />
 
         </View>
@@ -20,11 +22,15 @@ const Chatting = ({navigation}) => {
 export default Chatting
 
 const styles = StyleSheet.create({
+    page: {flex: 1},
     chatDate: {
         fontSize: 11,
         fontFamily: fonts.primary.normal,
         color: colors.text.secondary,
         marginVertical: 20,
         textAlign: 'center'
+    },
+    content: {
+        flex: 1
     }
 })
