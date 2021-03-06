@@ -1,7 +1,7 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native'
-import { ICMap } from '../../assets'
-import { DoctorCategory, HomeProfile, NewsItem } from '../../components'
+import { ICMap, ILLDocDen, ILLDocGen, ILLDocPed, ILLDocPsy, ILLDocVet, ILLMedicine } from '../../assets'
+import { DoctorCategory, Gap, HomeProfile, NewsItem } from '../../components'
 import { colors, fonts } from '../../utils'
 
 
@@ -18,14 +18,19 @@ const Home = ({navigation}) => {
                     </View>
                     <Text style={styles.welcome}>How can we help you?</Text>
                     <View style={styles.category}>
-                        <DoctorCategory />
-                        <DoctorCategory />
-                        <DoctorCategory />
+                        <DoctorCategory type1='General' type2='Practitioner' pic={ILLDocGen} />
+                        <Gap width={8} />
+                        <DoctorCategory type1='' type2='Pediatrician' pic={ILLDocPed} />
+                        <Gap width={8} />
+                        <DoctorCategory type1='' type2='Dentist' pic={ILLDocDen} />
                     </View>
+                    <Gap height={8} />
                     <View style={styles.category}>
-                        <DoctorCategory />
-                        <DoctorCategory />
-                        <DoctorCategory />
+                        <DoctorCategory type2='Psychiatrist' pic={ILLDocPsy}/>
+                        <Gap width={8} />
+                        <DoctorCategory type2='Veterinary' pic={ILLDocVet}/>
+                        <Gap width={8} />
+                        <DoctorCategory type2='Medicine' pic={ILLMedicine}/>
                     </View>
                 </View>
                 <View style={styles.article}>

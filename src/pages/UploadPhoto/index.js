@@ -4,10 +4,10 @@ import { ICAddPhoto, ILNullPhoto } from '../../assets'
 import { Button, Header1 } from '../../components'
 import { colors, fonts } from '../../utils'
 
-const UploadPhoto = () => {
+const UploadPhoto = ({navigation}) => {
     return (
         <View style={{flex: 1}}>
-            <Header1 title='Upload Photo' />
+            <Header1 title='Upload Photo' onPress={() => navigation.navigate('Register')}/>
             <View style={styles.content}>
                 <View style={styles.profile}>
                     <View style={styles.border}>
@@ -19,7 +19,7 @@ const UploadPhoto = () => {
                 </View>
 
                 <View style={styles.smallContainer}>
-                    <Button title='Upload and Continue' />
+                    <Button title='Upload and Continue'onPress={() => navigation.replace('MainApp')}/>
                 </View>
 
             </View>

@@ -1,14 +1,15 @@
 import React from 'react'
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native'
-import { ILDocGen } from '../../../assets'
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native'
+import { ILLDocGen } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const DoctorCategory = () => {
+const DoctorCategory = ({type1, type2, pic}) => {
     return (
         <TouchableOpacity style={styles.container}>
             <View style={styles.smallcontainer}>
-                <ILDocGen style={styles.illustratioon} />
-                <Text style={styles.category}>General Practitioners</Text>
+                <Image source={pic} style={styles.illustratioon} />
+                <Text style={styles.label}>{type1}</Text>
+                <Text style={styles.category}>{type2}</Text>
             </View>
         </TouchableOpacity>
     )
@@ -22,20 +23,30 @@ const styles = StyleSheet.create({
         backgroundColor: colors.cardLight,
         alignSelf: 'flex-start',
         borderRadius: 10,
-        marginRight: 7,
-        marginBottom: 7
+        width: 115,
+        height: 120
+        
     },
     smallcontainer: {
         paddingBottom: 4,
         paddingTop: 4
     },
-    category: {
-        maxWidth: 100,
+
+    label:{
+        fontSize: 14,
+        fontFamily: fonts.primary[700],
         color: colors.text.primary,
-        fontFamily: fonts.primary[700]
+        marginRight: 5,
+    },
+    category: {
+        color: colors.text.primary,
+        fontFamily: fonts.primary[700],
+        fontSize: 14,
     },
     illustratioon: {
         marginBottom: 10,
+        height: 42,
+        width: 42
     }
 })
 
