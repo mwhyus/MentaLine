@@ -2,10 +2,14 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
 import { Button, Gap } from '../../atoms'
+import LightProfile from './LightProfile'
 
 const Header1 = ({onPress, title, type}) => {
+    if (type == 'light-profile'){
+        return <LightProfile />
+    }
+    
     return (
-
         <View style={styles.container(type)}>
             <TouchableOpacity>
                 <Button type='icon-only' icon='back-dark' onPress={onPress}/>

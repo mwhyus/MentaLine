@@ -7,8 +7,8 @@ import { colors } from '../../utils'
 const ChooseDoctor = ({navigation}) => {
     return (
         <View style={styles.container}>
-            <Header1 type='light' title='Select a doctor' onPress={() => navigation.navigate('MainApp')}/>
-            <ListDoctor type='Chat' name='Reiner Braun' profile={DummyDoc1} chat='Greater Jakarta' />
+            <Header1 type='light' title='Select a doctor' onPress={() => navigation.goBack()}/>
+            <ListDoctor type='Chat' name='Reiner Braun' profile={DummyDoc1} chat='Greater Jakarta' onPress={() => navigation.navigate('Chatting')} />
             <ListDoctor type='Chat' name='Zoe Hange' profile={DummyDoc2} chat='Surabaya' />
             <ListDoctor type='Chat' name='Bertholt Hoover' profile={DummyDoc3} chat='Palembang' />
             <ListDoctor type='Chat' name='Mikasa Ackerman' profile={DummyDoc4} chat='Denpasar' />

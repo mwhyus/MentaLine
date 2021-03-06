@@ -1,19 +1,18 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Image, StyleSheet, Text, View, TouchableOpacity } from 'react-native'
 import { ICChatNow } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const ListDoctor = ({profile, name, chat, type}) => {
+const ListDoctor = ({profile, name, chat, type, onPress}) => {
     return (
-        <View style={styles.pages}>
+        <TouchableOpacity style={styles.pages} onPress={onPress}>
             <Image source={profile} style={styles.avatar} />
             <View style={styles.content}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.chat}>{chat}</Text>
             </View>
             {type == "Chat" && <ICChatNow /> }
-        </View>
+        </TouchableOpacity>
     )
 }
 

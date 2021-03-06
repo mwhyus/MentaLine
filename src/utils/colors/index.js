@@ -6,6 +6,7 @@
         dark2: '#2C3E50',
         grey1: '#7D8797',
         grey2: '#C1C1C1',
+        grey3: '#7F8C8D',
         white: '#ffffff',
         red:   '#D65445',
         blue:  '#0066CB'
@@ -24,6 +25,7 @@
             secondary: mainColors.grey1,
             menuInactive: mainColors.green2,
             menuActive: mainColors.dark2,
+            subTitle: mainColors.grey3
         },
         button: {
             primary: {
@@ -41,5 +43,6 @@
         cardLight: mainColors.green3,
         backgroundColor: mainColors.white,
         border: mainColors.grey2,
-        wrapper: mainColors.green2
+        wrapper: mainColors.green2,
+
     }

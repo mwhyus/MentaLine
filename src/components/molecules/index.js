@@ -5,6 +5,8 @@ import HomeProfile from './HomeProfile'
 import ListDoctor from './ListDoctor'
 import ListHospital from './ListHospitals'
 import NewsItem from './NewsItem'
+import ChatItem from './ChatItem'
+import InputChat from './InputChat'
 
 
 export {
@@ -15,4 +17,6 @@ export {
     NewsItem,
     ListDoctor,
     ListHospital,
+    ChatItem,
+    InputChat
 }
