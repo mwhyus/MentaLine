@@ -1,10 +1,10 @@
-import Header1 from './Header'
 import BottomNavigator from './BottomNavigator'
-import HomeProfile from './HomeProfile'
 import DoctorCategory from './DoctorCategory'
-import NewsItem from './NewsItem'
+import Header1 from './Header'
+import HomeProfile from './HomeProfile'
 import ListDoctor from './ListDoctor'
 import ListHospital from './ListHospitals'
+import NewsItem from './NewsItem'
 
 
 export {
@@ -14,5 +14,5 @@ export {
     DoctorCategory,
     NewsItem,
     ListDoctor,
-    ListHospital
+    ListHospital,
 }

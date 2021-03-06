@@ -18,7 +18,7 @@ const Home = ({navigation}) => {
                     </View>
                     <Text style={styles.welcome}>How can we help you?</Text>
                     <View style={styles.category}>
-                        <DoctorCategory type1='General' type2='Practitioner' pic={ILLDocGen} />
+                        <DoctorCategory type1='General' type2='Practitioner' pic={ILLDocGen} onPress={() => navigation.navigate('ChooseDoctor')} />
                         <Gap width={8} />
                         <DoctorCategory type1='' type2='Pediatrician' pic={ILLDocPed} />
                         <Gap width={8} />

@@ -1,16 +1,18 @@
 import React from 'react'
 import { Image, StyleSheet, Text, View } from 'react-native'
 import { TouchableOpacity } from 'react-native-gesture-handler'
+import { ICChatNow } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const ListDoctor = ({profile, name, chat}) => {
+const ListDoctor = ({profile, name, chat, type}) => {
     return (
         <View style={styles.pages}>
             <Image source={profile} style={styles.avatar} />
-            <TouchableOpacity>
+            <View style={styles.content}>
                 <Text style={styles.name}>{name}</Text>
                 <Text style={styles.chat}>{chat}</Text>
-            </TouchableOpacity>
+            </View>
+            {type == "Chat" && <ICChatNow /> }
         </View>
     )
 }
@@ -23,7 +25,11 @@ const styles = StyleSheet.create({
         padding: 16,
         borderBottomWidth: 1,
         borderColor: colors.border,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'space-between'
+    },
+    content: {
+        flex: 1,
     },
     avatar: {
         width: 54,

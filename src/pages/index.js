@@ -7,6 +7,7 @@ import Home from './Home'
 import Messages from './Messages'
 import Settings from './Settings'
 import Maps from './Maps'
+import ChooseDoctor from './ChooseDoctor'
 
 export {
     Splash,
@@ -17,5 +18,6 @@ export {
     Home,
     Messages,
     Settings,
-    Maps
+    Maps,
+    ChooseDoctor
 };

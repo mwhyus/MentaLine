@@ -9,7 +9,7 @@ import ICHomeActive from './HomeActive.svg'
 import ICMessagesActive from './MessagesActive.svg'
 import ICSettingsActive from './SettingsActive'
 import ICMap from './map'
-
+import ICChatNow from './email.svg'
 
 
 export {
@@ -23,5 +23,6 @@ export {
     ICHomeActive,
     ICMessagesActive,
     ICSettingsActive,
-    ICMap
+    ICMap,
+    ICChatNow
 }

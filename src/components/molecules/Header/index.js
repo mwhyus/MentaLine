@@ -3,10 +3,10 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { colors, fonts } from '../../../utils'
 import { Button, Gap } from '../../atoms'
 
-const Header1 = ({onPress, title}) => {
+const Header1 = ({onPress, title, type}) => {
     return (
 
-        <View style={styles.container}>
+        <View style={styles.container(type)}>
             <TouchableOpacity>
                 <Button type='icon-only' icon='back-dark' onPress={onPress}/>
             </TouchableOpacity>
@@ -19,12 +19,15 @@ const Header1 = ({onPress, title}) => {
 export default Header1
 
 const styles = StyleSheet.create({
-    container: {
+    container: (type) => ({
         paddingHorizontal: 16,
         paddingVertical: 30,
         flexDirection: 'row',
-        alignItems: 'center'
-    },
+        alignItems: 'center',
+        backgroundColor: type == 'light' ? colors.primary : colors.white,
+        borderBottomLeftRadius: type == 'light'? 20 : 0,
+        borderBottomRightRadius: type == 'light'? 20 : 0
+    }),
     text: {
         flex: 1,
         textAlign: 'center',
