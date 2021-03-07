@@ -1,13 +1,13 @@
 import React from 'react'
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ICAddPhoto, ILNullPhoto } from '../../assets'
 import { Button, Header1 } from '../../components'
 import { colors, fonts } from '../../utils'
 
-const UploadPhoto = ({navigation}) => {
+const UploadPhoto = ({ navigation }) => {
     return (
-        <View style={{flex: 1}}>
-            <Header1 title='Upload Photo' onPress={() => navigation.navigate('Register')}/>
+        <View style={styles.container}>
+            <Header1 title='Upload Photo' onPress={() => navigation.navigate('Register')} />
             <View style={styles.content}>
                 <View style={styles.profile}>
                     <View style={styles.border}>
@@ -19,9 +19,11 @@ const UploadPhoto = ({navigation}) => {
                 </View>
 
                 <View style={styles.smallContainer}>
-                    <Button title='Upload and Continue'onPress={() => navigation.replace('MainApp')}/>
+                    <Button title='Upload and Continue' onPress={() => navigation.replace('MainApp')} />
                 </View>
-
+                <TouchableOpacity onPress={() => navigation.replace('MainApp')}>
+                    <Text style={styles.skip}>Skip this step</Text>
+                </TouchableOpacity>
             </View>
         </View>
     )
@@ -30,7 +32,10 @@ const UploadPhoto = ({navigation}) => {
 export default UploadPhoto
 
 const styles = StyleSheet.create({
-
+    container: {
+        flex: 1,
+        backgroundColor: colors.backgroundColor
+    },
     content: {
         paddingHorizontal: 40,
         paddingBottom: 64,
@@ -81,5 +86,12 @@ const styles = StyleSheet.create({
 
     smallContainer: {
         marginLeft: 5
+    },
+    skip: {
+        color: colors.text.secondary,
+        fontFamily: fonts.primary.normal,
+        alignSelf: 'center',
+        marginTop: 12,
+        textDecorationLine: 'underline'
     }
 })

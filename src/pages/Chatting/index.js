@@ -6,7 +6,7 @@ import { colors, fonts } from '../../utils'
 const Chatting = ({ navigation }) => {
     return (
         <View style={styles.page}>
-            <Header1 type='light-profile' title="Zoe Hange" onPress={() => navigation.goBack()} />
+            <Header1 type='light-profile' title="Reiner Braun" onPress={() => navigation.goBack()} />
             <View style={styles.content}>
                 <Text style={styles.chatDate}>23 August, 2020</Text>
                 <ChatItem isDoctor />

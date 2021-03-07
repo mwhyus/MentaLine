@@ -9,7 +9,7 @@ const UserProfile = ({ navigation }) => {
             <Header1 title='Edit Profile' onPress={() => navigation.goBack()} />
             <ScrollView showsVerticalScrollIndicator={false}>
                 <View style={styles.content}>
-                    <Profile />
+                    <Profile isRemove/>
                     <Input label='Full Name' />
                     <Gap height={5} />
                     <Input label='Profession' />
@@ -20,7 +20,7 @@ const UserProfile = ({ navigation }) => {
                     <Gap height={30} />
                     <View style={styles.smallcontainer}>
                         <Gap width={6}/>
-                        <Button title='Save Profile' />
+                        <Button title='Save Profile' onPress={() => navigation.goBack()} />
                     </View>
 
                 </View>

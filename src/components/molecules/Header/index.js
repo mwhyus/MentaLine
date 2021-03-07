@@ -6,7 +6,7 @@ import LightProfile from './LightProfile'
 
 const Header1 = ({onPress, title, type}) => {
     if (type == 'light-profile'){
-        return <LightProfile />
+        return <LightProfile onPress={onPress}/>
     }
     
     return (

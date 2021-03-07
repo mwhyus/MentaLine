@@ -7,8 +7,8 @@ import { Button } from '../../atoms'
 const LightProfile = ({onPress}) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity onPress={onPress}>
-                <Button type='icon-only' icon='back-dark' />
+            <TouchableOpacity>
+                <Button type='icon-only' icon='back-dark' onPress={onPress} />
             </TouchableOpacity>
             <View style={styles.content}>
                 <Text style={styles.name}>Reiner Braun</Text>
