@@ -4,10 +4,10 @@ import { DummyDoc1 } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 import { Button } from '../../atoms'
 
-const LightProfile = ({ onPress }) => {
+const LightProfile = ({onPress}) => {
     return (
         <View style={styles.container}>
-            <TouchableOpacity>
+            <TouchableOpacity onPress={onPress}>
                 <Button type='icon-only' icon='back-dark' />
             </TouchableOpacity>
             <View style={styles.content}>

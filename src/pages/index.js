@@ -10,6 +10,7 @@ import Maps from './Maps'
 import ChooseDoctor from './ChooseDoctor'
 import Chatting from './Chatting'
 import UserProfile from './UserProfile'
+import DoctorProfile from './DoctorProfile'
 
 export {
     Splash,
@@ -23,5 +24,6 @@ export {
     Maps,
     ChooseDoctor,
     Chatting,
-    UserProfile
+    UserProfile,
+    DoctorProfile
 };

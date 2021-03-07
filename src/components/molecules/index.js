@@ -8,6 +8,7 @@ import NewsItem from './NewsItem'
 import ChatItem from './ChatItem'
 import InputChat from './InputChat'
 import Profile from './Profile'
+import ProfileItem from './ProfileItem'
 
 
 export {
@@ -20,5 +21,6 @@ export {
     ListHospital,
     ChatItem,
     InputChat,
-    Profile
+    Profile,
+    ProfileItem
 }
