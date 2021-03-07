@@ -8,7 +8,7 @@ const LightProfile = ({ onPress }) => {
     return (
         <View style={styles.container}>
             <TouchableOpacity>
-                <Button type='icon-only' icon='back-dark' onPress={onPress} />
+                <Button type='icon-only' icon='back-dark' />
             </TouchableOpacity>
             <View style={styles.content}>
                 <Text style={styles.name}>Reiner Braun</Text>

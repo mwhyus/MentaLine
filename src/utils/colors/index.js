@@ -24,6 +24,7 @@
         text: {
             primary: mainColors.dark1,
             secondary: mainColors.grey1,
+            third: mainColors.white,
             menuInactive: mainColors.green2,
             menuActive: mainColors.dark2,
         },
