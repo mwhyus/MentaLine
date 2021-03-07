@@ -9,6 +9,7 @@ import Settings from './Settings'
 import Maps from './Maps'
 import ChooseDoctor from './ChooseDoctor'
 import Chatting from './Chatting'
+import UserProfile from './UserProfile'
 
 export {
     Splash,
@@ -21,5 +22,6 @@ export {
     Settings,
     Maps,
     ChooseDoctor,
-    Chatting
+    Chatting,
+    UserProfile
 };

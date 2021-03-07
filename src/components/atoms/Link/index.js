@@ -2,9 +2,9 @@ import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import { colors, fonts } from '../../../utils'
 
-const Link = ({title, paddingVertical}) => {
+const Link = ({title, paddingVertical, onPress}) => {
     return (
-        <TouchableOpacity style={styles.container}>
+        <TouchableOpacity style={styles.container} onPress={onPress}>
             <Text style={styles.text(paddingVertical)}>{title}</Text>
         </TouchableOpacity>
     )

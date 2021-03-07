@@ -1,9 +1,9 @@
 import React from 'react'
-import { StyleSheet, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, TouchableOpacity, View,Text } from 'react-native'
 import { ButtonLogout, HomeProfile, Link } from '../../components'
 import { colors } from '../../utils'
 
-const Settings = () => {
+const Settings = ({navigation}) => {
     return (
         <View style={styles.pages}>
             <View style={styles.header}>
@@ -15,8 +15,8 @@ const Settings = () => {
             <View style={styles.container}>
                 <View style={styles.content}>
                     <Link title='Languages' />
-                    <TouchableOpacity style={styles.textwrapper}>
-                        <Link title='Edit Profile' paddingVertical={4} />
+                    <TouchableOpacity style={styles.textwrapper} onPress={() => navigation.navigate('UserProfile')}>
+                        <Text style={{paddingVertical: 6}}>Edit Profile</Text>
                     </TouchableOpacity>
                     <Link title='Give Us Rate' />
                     <Link title='Help Center' />
