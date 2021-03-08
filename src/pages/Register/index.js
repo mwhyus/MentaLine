@@ -29,6 +29,7 @@ const Register = ({ navigation }) => {
             .then((success) => {
                 // Signed in
                 setLoading(false)
+                setForm('reset')
                 console.log('register success', success)
             })
             .catch((error) => {
