@@ -6,7 +6,7 @@ import { colors, fonts } from '../../utils'
 
 const Login = ({ navigation }) => {
     return (
-        <View style={{ flex: 1, padding: 40 }}>
+        <View style={styles.page}>
             <View style={styles.logo}>
                 <ICLogo />
             </View>
@@ -33,6 +33,11 @@ const Login = ({ navigation }) => {
 export default Login
 
 const styles = StyleSheet.create({
+    page: {
+        flex: 1,
+        padding: 40,
+        backgroundColor: colors.backgroundColor
+    },
     logo: {
         alignSelf: 'center',
         marginTop: '25%',

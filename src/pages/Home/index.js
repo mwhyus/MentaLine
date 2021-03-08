@@ -1,6 +1,6 @@
 import React from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native'
-import { ICMap, ILLDocDen, ILLDocGen, ILLDocPed, ILLDocPsy, ILLDocVet, ILLMedicine } from '../../assets'
+import { DummyNews1, DummyNews2, DummyNews3, ICMap, ILLDocDen, ILLDocGen, ILLDocPed, ILLDocPsy, ILLDocVet, ILLMedicine } from '../../assets'
 import { DoctorCategory, Gap, HomeProfile, NewsItem } from '../../components'
 import { colors, fonts } from '../../utils'
 
@@ -18,7 +18,12 @@ const Home = ({navigation}) => {
                     </View>
                     <Text style={styles.welcome}>How can we help you?</Text>
                     <View style={styles.category}>
-                        <DoctorCategory type1='General' type2='Practitioner' pic={ILLDocGen} onPress={() => navigation.navigate('ChooseDoctor')} />
+                        <DoctorCategory
+                            type1='General'
+                            type2='Practitioner' 
+                            pic={ILLDocGen} 
+                            onPress={() => navigation.navigate('ChooseDoctor')} 
+                            />
                         <Gap width={8} />
                         <DoctorCategory type1='' type2='Pediatrician' pic={ILLDocPed} />
                         <Gap width={8} />
@@ -39,9 +44,9 @@ const Home = ({navigation}) => {
                         <Text style={styles.seeall}>See all</Text>
                     </TouchableOpacity>
                 </View>
-                <NewsItem />
-                <NewsItem />
-                <NewsItem />
+                <NewsItem title='Is it safe to stay in home during Corona Virus?' source={DummyNews1}/>
+                <NewsItem title='3 Ways to maintain focus as you age?' source={DummyNews2}/>
+                <NewsItem title='Laughter and love' source={DummyNews3}/>
             </View>
         </ScrollView>
     )

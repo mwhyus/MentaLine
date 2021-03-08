@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     category: {
         color: colors.text.primary,
         fontFamily: fonts.primary[700],
-        fontSize: 14,
+        fontSize: 16,
     },
     illustration: {
         marginBottom: 10,
