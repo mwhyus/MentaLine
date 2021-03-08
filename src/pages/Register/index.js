@@ -4,6 +4,7 @@ import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Input, Loading } from '../../components'
 import { colors, fonts, useForm } from '../../utils'
 import { Fire } from '../../config'
+import { showMessage, hideMessage } from "react-native-flash-message";
 
 const Register = ({ navigation }) => {
     // const[fullName, setFullName] = useState('')
@@ -35,6 +36,12 @@ const Register = ({ navigation }) => {
             .catch((error) => {
                 const errorMessage = error.message;
                 setLoading(false)
+                showMessage({
+                    message: errorMessage,
+                    type: 'default',
+                    backgroundColor: colors.error,
+                    color: colors.white
+                })
                 console.log('error register', errorMessage)
             });
 

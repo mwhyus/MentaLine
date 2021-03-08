@@ -9,6 +9,7 @@
         grey3: '#E7E7E7',
         white: '#ffffff',
         red:   '#D65445',
+        red2: '#E06379',
         blue:  '#0066CB',
         black1: '#000000',
         black2: 'rgba(0, 0, 0, 0.5)'
@@ -46,6 +47,7 @@
         backgroundColor: mainColors.white,
         border: mainColors.grey2,
         wrapper: mainColors.green2,
-        loadingBackground: mainColors.black2
+        loadingBackground: mainColors.black2,
+        error: mainColors.red2
 
     }
