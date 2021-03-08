@@ -1,15 +1,16 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Input } from '../../components'
 import { colors, fonts, useForm } from '../../utils'
+import { Fire } from '../../config'
 
 const Register = ({ navigation }) => {
     // const[fullName, setFullName] = useState('')
     // const[Profession, setProfession] = useState('')
     // const[Email, setEmail] = useState('')
     // const[Password, setPassword] = useState('')
-    
+
 
     const [form, setForm] = useForm({
         fullName: '',
@@ -18,8 +19,19 @@ const Register = ({ navigation }) => {
         Password: '',
     })
 
-    const onContinue = () =>{
+    const onContinue = () => {
         console.log(form)
+        Fire.auth()
+            .createUserWithEmailAndPassword(form.Email, form.Password)
+            .then((success) => {
+                // Signed in
+                console.log('register success', success)
+            })
+            .catch((error) => {
+                const errorMessage = error.message;
+                console.log('error register', errorMessage)
+            });
+
         // navigation.navigate('UploadPhoto')
 
     }
@@ -27,10 +39,10 @@ const Register = ({ navigation }) => {
         <View style={styles.MainContainer}>
             <Text style={styles.text}>Register Yourself</Text>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <Input label='Full Name'  value={form.fullName} onChangeText={value => setForm('fullName', value)} />
-                <Input label='Profession' value={form.Profession} onChangeText={value => setForm('Profession', value)}/>
-                <Input label='Email' value={form.Email} onChangeText={value => setForm('Email', value)}/>
-                <Input label='Password' value={form.Password} onChangeText={value => setForm('Password', value)} secureTextEntry/>
+                <Input label='Full Name' value={form.fullName} onChangeText={value => setForm('fullName', value)} />
+                <Input label='Profession' value={form.Profession} onChangeText={value => setForm('Profession', value)} />
+                <Input label='Email' value={form.Email} onChangeText={value => setForm('Email', value)} />
+                <Input label='Password' value={form.Password} onChangeText={value => setForm('Password', value)} secureTextEntry />
                 <Gap height={40} />
                 <View style={{ marginLeft: 7 }}>
                     <Button title='Sign Up' onPress={onContinue} />
