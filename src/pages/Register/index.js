@@ -28,9 +28,24 @@ const Register = ({ navigation }) => {
         Fire.auth()
             .createUserWithEmailAndPassword(form.Email, form.Password)
             .then((success) => {
-                // Signed in
                 setLoading(false)
                 setForm('reset')
+                //Link
+                const data = {
+                    fullName: form.fullName,
+                    Profession: form.Profession,
+                    Email: form.Email,
+
+                    /* Dont use this below bcs of ethic code 
+                    to not showing the password */
+
+                    // Password: form.Password,
+                }
+                Fire
+                .database()
+                .ref('users'+success.user.uid+'/')
+                .set(data)
+                
                 console.log('register success', success)
             })
             .catch((error) => {
