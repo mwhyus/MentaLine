@@ -7,6 +7,7 @@
         grey1: '#7D8797',
         grey2: '#C1C1C1',
         grey3: '#E7E7E7',
+        grey4: '#B1B7C2',
         white: '#ffffff',
         red:   '#D65445',
         red2: '#E06379',
@@ -41,6 +42,10 @@
             },
             third: {
                 background: mainColors.red
+            },
+            disable: {
+                background: mainColors.grey3,
+                text: mainColors.grey4
             }
         },
         cardLight: mainColors.green3,

@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { showMessage } from "react-native-flash-message"
 import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Input, Loading } from '../../components'
-import { colors, fonts, useForm } from '../../utils'
 import { Fire } from '../../config'
-import { showMessage, hideMessage } from "react-native-flash-message";
+import { colors, fonts, useForm } from '../../utils'
 
 const Register = ({ navigation }) => {
     // const[fullName, setFullName] = useState('')

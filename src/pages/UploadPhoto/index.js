@@ -1,25 +1,57 @@
 import React from 'react'
 import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
-import { ICAddPhoto, ILNullPhoto } from '../../assets'
+import { showMessage } from "react-native-flash-message"
+import { launchImageLibrary } from 'react-native-image-picker'
+import { useState } from 'react/cjs/react.development'
+import { ICAddPhoto, ICRemovePhoto, ILNullPhoto } from '../../assets'
 import { Button, Header1 } from '../../components'
 import { colors, fonts } from '../../utils'
 
+
 const UploadPhoto = ({ navigation }) => {
+    const [hasPhoto, setHasPhoto] = useState(false)
+    const [photo, setPhoto] = useState(ILNullPhoto)
+    const getImage = () => {
+        launchImageLibrary(
+            { includeBase64: true },
+            response => {
+                console.log('response: ', response)
+                if (response.didCancel || response.error) {
+                    showMessage({
+                        message: 'Oops, you have not selected a photo',
+                        type: 'default',
+                        backgroundColor: colors.error,
+                        color: colors.white
+                    })
+                } else {
+                    let source = { uri: response.uri }
+                    setPhoto(source)
+                    setHasPhoto(true)
+                }
+            })
+    }
+
     return (
         <View style={styles.container}>
             <Header1 title='Upload Photo' onPress={() => navigation.navigate('Register')} />
             <View style={styles.content}>
                 <View style={styles.profile}>
-                    <View style={styles.border}>
-                        <Image source={ILNullPhoto} style={styles.nullphoto} />
-                        <ICAddPhoto style={styles.addPhoto} />
-                    </View>
+                    <TouchableOpacity style={styles.border} onPress={getImage}>
+                        <Image source={photo} style={styles.nullphoto} />
+                        {hasPhoto && <ICRemovePhoto style={styles.addPhoto} />}
+                        {!hasPhoto && <ICAddPhoto style={styles.addPhoto} />}
+                    </TouchableOpacity>
                     <Text style={styles.name}>Erwin Smith</Text>
                     <Text style={styles.profession}>Head of Survey Corps</Text>
                 </View>
 
                 <View style={styles.smallContainer}>
-                    <Button title='Upload and Continue' onPress={() => navigation.replace('MainApp')} />
+                    <Button
+                        disable={!hasPhoto}
+                        title='Upload and Continue'
+                        onPress={() => navigation.replace('MainApp')}
+
+                    />
                 </View>
                 <TouchableOpacity onPress={() => navigation.replace('MainApp')}>
                     <Text style={styles.skip}>Skip this step</Text>
@@ -44,7 +76,8 @@ const styles = StyleSheet.create({
     },
     nullphoto: {
         height: 110,
-        width: 110
+        width: 110,
+        borderRadius: 110 / 2
     },
 
     border: {
