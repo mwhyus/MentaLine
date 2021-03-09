@@ -5,10 +5,14 @@ import { launchImageLibrary } from 'react-native-image-picker'
 import { useState } from 'react/cjs/react.development'
 import { ICAddPhoto, ICRemovePhoto, ILNullPhoto } from '../../assets'
 import { Button, Header1 } from '../../components'
+import { Fire } from '../../config'
 import { colors, fonts } from '../../utils'
 
 
-const UploadPhoto = ({ navigation }) => {
+const UploadPhoto = ({ navigation, route }) => {
+    const { fullName, Profession, uid } = route.params
+    
+    const [photoForDB, setPhotoForDB] = useState('')
     const [hasPhoto, setHasPhoto] = useState(false)
     const [photo, setPhoto] = useState(ILNullPhoto)
     const getImage = () => {
@@ -18,17 +22,28 @@ const UploadPhoto = ({ navigation }) => {
                 console.log('response: ', response)
                 if (response.didCancel || response.error) {
                     showMessage({
-                        message: 'Oops, you have not selected a photo',
+                        message: `Oops, you haven't selected a photo`,
                         type: 'default',
                         backgroundColor: colors.error,
                         color: colors.white
                     })
                 } else {
-                    let source = { uri: response.uri }
+                    console.log('respon getImage: ', response)
+                    const source = { uri: response.uri }
+
+                    setPhotoForDB(`data:${response.type};base64, ${response.base64}`)
                     setPhoto(source)
                     setHasPhoto(true)
                 }
             })
+    }
+
+    const uploadAndContinue = () => {
+        Fire.database()
+            .ref('users/' + uid  + '/')
+            .update({ photo: photoForDB })
+
+            navigation.replace('MainApp')
     }
 
     return (
@@ -41,15 +56,15 @@ const UploadPhoto = ({ navigation }) => {
                         {hasPhoto && <ICRemovePhoto style={styles.addPhoto} />}
                         {!hasPhoto && <ICAddPhoto style={styles.addPhoto} />}
                     </TouchableOpacity>
-                    <Text style={styles.name}>Erwin Smith</Text>
-                    <Text style={styles.profession}>Head of Survey Corps</Text>
+                    <Text style={styles.name}>{fullName}</Text>
+                    <Text style={styles.profession}>{Profession}</Text>
                 </View>
 
                 <View style={styles.smallContainer}>
                     <Button
                         disable={!hasPhoto}
                         title='Upload and Continue'
-                        onPress={() => navigation.replace('MainApp')}
+                        onPress={uploadAndContinue}
 
                     />
                 </View>

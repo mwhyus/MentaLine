@@ -24,7 +24,7 @@ const Register = ({ navigation }) => {
          
     const onContinue = () => {
         console.log(form)
-        
+
         setLoading(true)
         Fire.auth()
             .createUserWithEmailAndPassword(form.Email, form.Password)
@@ -36,21 +36,21 @@ const Register = ({ navigation }) => {
                     fullName: form.fullName,
                     Profession: form.Profession,
                     Email: form.Email,
+                    uid: success.user.uid
 
                     /* Dont use this below bcs of ethic code 
                     to not showing the password */
 
                     // Password: form.Password,
                 }
-                Fire
-                .database()
-                .ref('users'+success.user.uid+'/')
+                Fire.database()
+                .ref('users/' + success.user.uid + '/')
                 .set(data)
 
                 storeData('user', data)
                 
+                navigation.navigate('UploadPhoto', data)
                 console.log('register success', success)
-                navigation.navigate('UploadPhoto')
             })
             .catch((error) => {
                 const errorMessage = error.message;
