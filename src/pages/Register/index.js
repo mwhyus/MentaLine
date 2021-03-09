@@ -4,14 +4,14 @@ import { showMessage } from "react-native-flash-message"
 import { ScrollView } from 'react-native-gesture-handler'
 import { Button, Gap, Input, Loading } from '../../components'
 import { Fire } from '../../config'
-import { colors, fonts, useForm } from '../../utils'
+import { colors, fonts, getData, storeData, useForm } from '../../utils'
+
 
 const Register = ({ navigation }) => {
     // const[fullName, setFullName] = useState('')
     // const[Profession, setProfession] = useState('')
     // const[Email, setEmail] = useState('')
     // const[Password, setPassword] = useState('')
-
 
     const [form, setForm] = useForm({
         fullName: '',
@@ -21,16 +21,17 @@ const Register = ({ navigation }) => {
     })
 
     const [loading, setLoading] = useState(false)
-
+         
     const onContinue = () => {
         console.log(form)
+        
         setLoading(true)
         Fire.auth()
             .createUserWithEmailAndPassword(form.Email, form.Password)
             .then((success) => {
                 setLoading(false)
                 setForm('reset')
-                //Link
+                //Link: https://firebase.com/users/763872468123
                 const data = {
                     fullName: form.fullName,
                     Profession: form.Profession,
@@ -45,8 +46,11 @@ const Register = ({ navigation }) => {
                 .database()
                 .ref('users'+success.user.uid+'/')
                 .set(data)
+
+                storeData('user', data)
                 
                 console.log('register success', success)
+                navigation.navigate('UploadPhoto')
             })
             .catch((error) => {
                 const errorMessage = error.message;
@@ -60,7 +64,6 @@ const Register = ({ navigation }) => {
                 console.log('error register', errorMessage)
             });
 
-        // navigation.navigate('UploadPhoto')
 
     }
     return (
