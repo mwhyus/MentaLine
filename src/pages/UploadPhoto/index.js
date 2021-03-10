@@ -17,7 +17,7 @@ const UploadPhoto = ({ navigation, route }) => {
     const [photo, setPhoto] = useState(ILNullPhoto)
     const getImage = () => {
         launchImageLibrary(
-            { includeBase64: true },
+            {quality: 0.5,maxWidth: 200, maxHeight: 200, includeBase64: true },
             response => {
                 console.log('response: ', response)
                 if (response.didCancel || response.error) {
