@@ -1,23 +1,29 @@
 import React from 'react'
-import { Image, StyleSheet, Text, View } from 'react-native'
-import { DummyUser, ICRemovePhoto } from '../../../assets'
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { ICRemovePhoto } from '../../../assets'
 import { colors, fonts } from '../../../utils'
 
-const Profile = ({ name, desc, isRemove }) => {
+const Profile = ({ name, desc, isRemove, photo, onPress }) => {
     return (
         <View style={styles.container}>
-            <View style={styles.borderProfile}>
-                <Image source={DummyUser} style={styles.avatar} />
-                {isRemove && <ICRemovePhoto style={styles.removePhoto}/>}
-            </View>
-            {
-                name && (
-                    <View>
-                        <Text style={styles.name}>{name}</Text>
-                        <Text style={styles.profession}>{desc}</Text>
-                    </View>
-                )
-            }
+            {!isRemove && (
+                <View style={styles.borderProfile}>
+                    <Image source={photo} style={styles.avatar} />
+                    {isRemove && <ICRemovePhoto style={styles.removePhoto} />}
+                </View>
+            )}
+            {isRemove && (
+                <TouchableOpacity style={styles.borderProfile} onPress={onPress}>
+                    <Image source={photo} style={styles.avatar} />
+                    {isRemove && <ICRemovePhoto style={styles.removePhoto} />}
+                </TouchableOpacity>
+            )}
+            {name && (
+                <View>
+                    <Text style={styles.name}>{name}</Text>
+                    <Text style={styles.profession}>{desc}</Text>
+                </View>
+            )}
         </View>
     )
 }
@@ -31,7 +37,8 @@ const styles = StyleSheet.create({
     },
     avatar: {
         width: 100,
-        height: 100
+        height: 100,
+        borderRadius: 100 / 2
     },
     borderProfile: {
         width: 120,
@@ -60,6 +67,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 2,
         bottom: 2
-        
+
     }
 })
