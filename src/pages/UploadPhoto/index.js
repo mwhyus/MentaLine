@@ -6,7 +6,7 @@ import { useState } from 'react/cjs/react.development'
 import { ICAddPhoto, ICRemovePhoto, ILNullPhoto } from '../../assets'
 import { Button, Header1 } from '../../components'
 import { Fire } from '../../config'
-import { colors, fonts } from '../../utils'
+import { colors, fonts, storeData } from '../../utils'
 
 
 const UploadPhoto = ({ navigation, route }) => {
@@ -42,6 +42,11 @@ const UploadPhoto = ({ navigation, route }) => {
         Fire.database()
             .ref('users/' + uid  + '/')
             .update({ photo: photoForDB })
+
+            let data = route.params
+            data.photo = photoForDB
+
+            storeData('user', data)
 
             navigation.replace('MainApp')
     }

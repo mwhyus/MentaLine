@@ -1,11 +1,18 @@
 import React from 'react'
+import { useEffect } from 'react'
 import { StyleSheet, Text, View, ScrollView, TouchableOpacity } from 'react-native'
 import { DummyNews1, DummyNews2, DummyNews3, ICMap, ILLDocDen, ILLDocGen, ILLDocPed, ILLDocPsy, ILLDocVet, ILLMedicine } from '../../assets'
 import { DoctorCategory, Gap, HomeProfile, NewsItem } from '../../components'
-import { colors, fonts } from '../../utils'
+import { colors, fonts, getData } from '../../utils'
 
 
 const Home = ({navigation}) => {
+    useEffect(() => {
+        getData('user').then(res => {
+            console.log('data user:', res)
+        })
+    }, [])
+
     return (
         <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
             <View style={styles.content}>
