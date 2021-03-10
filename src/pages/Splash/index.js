@@ -1,11 +1,22 @@
 import React ,{useEffect} from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 import { ICLogo, ILFirst } from '../../assets'
+import { Fire } from '../../config'
 
 export default function Splash({navigation}) {
   useEffect(() => {
     setTimeout(() => {
-      navigation.replace('GetStarted')
+      Fire.auth().onAuthStateChanged((user) => {
+        if(user){
+          //jika user nya login
+          console.log('user: ', user)
+          navigation.replace('MainApp')
+        } else {
+          //user logout
+          navigation.replace('GetStarted')
+        }
+      })
+      // navigation.replace('GetStarted')
     }, 2000)
   },[])
   
