@@ -14,7 +14,7 @@ const Home = ({navigation}) => {
     }, [])
 
     return (
-        <ScrollView style={styles.page} showsVerticalScrollIndicator={false}>
+
             <View style={styles.content}>
                 <View style={styles.smallcontainer}>
                     <View style={styles.header}>
@@ -26,23 +26,14 @@ const Home = ({navigation}) => {
                     <Text style={styles.welcome}>How can we help you?</Text>
                     <View style={styles.category}>
                         <DoctorCategory
-                            type1='General'
-                            type2='Practitioner' 
+                            type2='Councellor' 
                             pic={ILLDocGen} 
                             onPress={() => navigation.navigate('ChooseDoctor')} 
                             />
                         <Gap width={8} />
-                        <DoctorCategory type1='' type2='Pediatrician' pic={ILLDocPed} />
+                        <DoctorCategory type1='' type2='Psychiatrist' pic={ILLDocPed} />
                         <Gap width={8} />
-                        <DoctorCategory type1='' type2='Dentist' pic={ILLDocDen} />
-                    </View>
-                    <Gap height={8} />
-                    <View style={styles.category}>
-                        <DoctorCategory type2='Psychiatrist' pic={ILLDocPsy}/>
-                        <Gap width={8} />
-                        <DoctorCategory type2='Veterinary' pic={ILLDocVet}/>
-                        <Gap width={8} />
-                        <DoctorCategory type2='Medicine' pic={ILLMedicine}/>
+                        <DoctorCategory type1='' type2='Psychologist' pic={ILLDocPsy} />
                     </View>
                 </View>
                 <View style={styles.article}>
@@ -55,7 +46,7 @@ const Home = ({navigation}) => {
                 <NewsItem title='3 Ways to maintain focus as you age?' source={DummyNews2}/>
                 <NewsItem title='Laughter and love' source={DummyNews3}/>
             </View>
-        </ScrollView>
+
     )
 }
 
